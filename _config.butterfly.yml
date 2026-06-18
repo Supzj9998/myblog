@@ -383,7 +383,7 @@ readmode: true
 darkmode:
   enable: true
   # Toggle Button to switch dark/light mode
-  button: true
+  button: false
   # Switch dark/light mode automatically
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
@@ -475,8 +475,8 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: 搜索文章
 
   # Algolia Search
   algolia_search:
@@ -910,7 +910,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: medium_zoom
 
 # --------------------------------------
 # Tag Plugins settings
@@ -1012,9 +1012,9 @@ instantpage: false
 # Lazyload
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   # Use browser's native lazyload instead of vanilla-lazyload
-  native: false
+  native: true
   # Specify the field to use lazyload (site or post)
   field: site
   placeholder:

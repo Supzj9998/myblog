@@ -525,3 +525,52 @@ body {
   }
 }
 
+body.read-mode {
+  --font-color: #1f1f1f !important;
+  --readmode-light-color: #ead6a3 !important;
+  --white: #1f1f1f !important;
+  --light-grey: #3a3326 !important;
+  --gray: #9a855b !important;
+  --hr-border: rgba(90, 70, 35, 0.35) !important;
+  --hr-before-color: rgba(90, 70, 35, 0.55) !important;
+  --highlight-bg: #ddc78f !important;
+  --exit-btn-bg: #c8ad68 !important;
+  --exit-btn-color: #1f1f1f !important;
+  --exit-btn-hover: #b99a4f !important;
+  background: #ead6a3 !important;
+  color: #1f1f1f !important;
+}
+
+body.read-mode #post,
+body.read-mode #article-container,
+body.read-mode .post-content,
+body.read-mode .container,
+body.read-mode blockquote,
+body.read-mode #post-info {
+  background: transparent !important;
+  color: #1f1f1f !important;
+}
+
+body.read-mode #article-container,
+body.read-mode #article-container *,
+body.read-mode #post-info,
+body.read-mode #post-info *,
+body.read-mode #post-info .post-title,
+body.read-mode #post-info #post-meta,
+body.read-mode #post-info #post-meta *,
+body.read-mode #post-info a,
+body.read-mode .post-content,
+body.read-mode .post-content * {
+  color: #1f1f1f !important;
+  text-shadow: none !important;
+}
+
+body.read-mode #article-container a,
+body.read-mode .post-content a {
+  color: #6f5a22 !important;
+}
+
+body.read-mode .exit-readmode {
+  border: 1px solid rgba(90, 70, 35, 0.35) !important;
+}
+
