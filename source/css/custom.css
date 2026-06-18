@@ -1,0 +1,55 @@
+body {
+  background: #24283b !important;
+}
+
+#web_bg {
+  background-color: #24283b !important;
+  background-image: url("/img/index_img.jpg") !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+#web_bg.bg-animation {
+  animation: none !important;
+}
+
+[data-theme='dark'] #web_bg::before {
+  background-color: transparent !important;
+}
+
+#page-header:not(.not-top-img) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#page-header:not(.not-top-img)::before {
+  background-color: rgba(36, 40, 59, 0.42) !important;
+}
+
+#footer {
+  background: #24283b !important;
+}
+
+#footer::before {
+  background-color: rgba(36, 40, 59, 0.82) !important;
+}
+
+#aside-content .card-widget,
+.layout > div:first-child:not(.nc),
+#recent-posts .recent-post-item {
+  background: rgba(36, 40, 59, 0.86) !important;
+  border: 1px solid rgba(65, 72, 104, 0.78) !important;
+  box-shadow: 0 8px 24px rgba(15, 16, 24, 0.28) !important;
+}
+
+.avatar-img {
+  border: 3px solid #7aa2f7 !important;
+  box-shadow: 0 0 0 4px rgba(122, 162, 247, 0.18), 0 10px 28px rgba(15, 16, 24, 0.35) !important;
+  background: rgba(36, 40, 59, 0.82) !important;
+}
+
+.avatar-img img {
+  border-radius: inherit;
+}
