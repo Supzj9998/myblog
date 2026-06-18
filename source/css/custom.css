@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Zpix';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/zpix.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/press-start-2p.ttf') format('truetype');
+}
+
 body {
   background: #24283b !important;
 }
@@ -52,4 +68,259 @@ body {
 
 .avatar-img img {
   border-radius: inherit;
+}
+
+#site-title,
+#blog-info .site-name {
+  color: #7aa2f7 !important;
+  font-family: 'Zpix', 'Press Start 2P', 'Courier New', monospace !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-shadow: 0 0 8px rgba(122, 162, 247, 0.42), 2px 2px 0 rgba(36, 40, 59, 0.88) !important;
+}
+
+#site-title {
+  line-height: 1.6 !important;
+}
+
+#blog-info .site-name {
+  font-size: 0.78rem !important;
+}
+
+#nav,
+#sidebar #sidebar-menus,
+#aside-content,
+#footer,
+#rightside,
+#pagination,
+#page-header #site-title,
+#page-header #site-subtitle,
+#post-info,
+#page .page-title,
+#archive,
+#tag,
+#category,
+.search-dialog .search-nav,
+.search-dialog .search-result-list {
+  font-family: 'Zpix', 'Press Start 2P', 'Courier New', monospace !important;
+  letter-spacing: 0 !important;
+}
+
+#aside-content,
+#footer,
+#sidebar #sidebar-menus,
+#pagination,
+#archive,
+#tag,
+#category,
+.search-dialog {
+  font-size: 0.72rem;
+  line-height: 1.8;
+}
+
+#recent-posts .article-title,
+#recent-posts .article-meta-wrap,
+#aside-content .item-headline,
+#aside-content .author-info-name,
+#aside-content .site-data,
+#aside-content #card-info-btn,
+#sidebar #sidebar-menus .site-data,
+#sidebar #sidebar-menus .site-page,
+#footer .footer-copyright,
+#footer .framework-info {
+  font-family: 'Zpix', 'Press Start 2P', 'Courier New', monospace !important;
+  letter-spacing: 0 !important;
+}
+
+#recent-posts .content,
+#article-container,
+.post-content,
+#post,
+#post p,
+#post li,
+#post table,
+#post blockquote {
+  font-family: var(--global-font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+#nav,
+#nav a,
+#nav span.site-page,
+#nav .site-name,
+#sidebar #sidebar-menus,
+#sidebar #sidebar-menus a,
+#aside-content,
+#aside-content a,
+#aside-content .item-headline,
+#aside-content .author-info-name,
+#aside-content .author-info-description,
+#aside-content .headline,
+#aside-content .length-num,
+#aside-content time,
+#footer,
+#footer a,
+#rightside button,
+#pagination,
+#pagination a,
+#archive,
+#archive a,
+#tag,
+#tag a,
+#category,
+#category a,
+#page .page-title,
+#page-header #site-title,
+#page-header #site-subtitle,
+#post-info,
+#post-info a,
+#recent-posts .article-title,
+#recent-posts .article-meta-wrap,
+#recent-posts .article-meta-wrap a,
+.search-dialog,
+.search-dialog a {
+  color: #7aa2f7 !important;
+}
+
+#recent-posts .content,
+#article-container,
+#article-container *,
+.post-content,
+.post-content *,
+#post p,
+#post li,
+#post table,
+#post blockquote {
+  color: var(--font-color) !important;
+}
+
+#recent-posts .article-title,
+#recent-posts .article-meta-wrap,
+#recent-posts .article-meta-wrap *,
+#post-info .post-title,
+#post-info #post-meta,
+#post-info #post-meta *,
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4,
+#article-container h5,
+#article-container h6,
+#post .tag_share,
+#post .tag_share *,
+#post .post-copyright,
+#post .post-copyright * {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: var(--global-font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  text-shadow: none !important;
+}
+
+#recent-posts .article-title:hover,
+#recent-posts .article-meta-wrap a:hover,
+#post-info #post-meta a:hover,
+#post .tag_share a:hover {
+  color: #c0caf5 !important;
+}
+
+#body-wrap.type-categories #page,
+#body-wrap.type-tags #page {
+  font-family: 'Zpix', 'Press Start 2P', 'Courier New', monospace !important;
+  color: #7aa2f7 !important;
+}
+
+#body-wrap.type-categories .category-lists,
+#body-wrap.type-categories .category-list,
+#body-wrap.type-categories .category-list-item,
+#body-wrap.type-categories .category-list-link,
+#body-wrap.type-categories .category-list-count {
+  color: #7aa2f7 !important;
+  font-family: 'Zpix', 'Press Start 2P', 'Courier New', monospace !important;
+  font-size: 1.15rem !important;
+  line-height: 2.2 !important;
+}
+
+#body-wrap.type-tags .tag-cloud-title,
+#body-wrap.type-tags .tag-cloud-list,
+#body-wrap.type-tags .tag-cloud-list a {
+  color: #7aa2f7 !important;
+  font-family: 'Zpix', 'Press Start 2P', 'Courier New', monospace !important;
+  font-size: 1.1rem !important;
+  line-height: 2.2 !important;
+}
+
+#body-wrap.type-categories .category-list-link:hover,
+#body-wrap.type-tags .tag-cloud-list a:hover {
+  color: #c0caf5 !important;
+  text-shadow: 0 0 8px rgba(122, 162, 247, 0.55) !important;
+}
+
+.fa,
+.fas,
+.fa-solid {
+  font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free', 'Font Awesome 5 Free' !important;
+  font-weight: 900 !important;
+}
+
+.far,
+.fa-regular {
+  font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free', 'Font Awesome 5 Free' !important;
+  font-weight: 400 !important;
+}
+
+.fab,
+.fa-brands {
+  font-family: 'Font Awesome 7 Brands', 'Font Awesome 6 Brands', 'Font Awesome 5 Brands' !important;
+  font-weight: 400 !important;
+}
+
+#body-wrap #post-info #post-meta i.fa,
+#body-wrap #post-info #post-meta i.fas,
+#body-wrap #post-info #post-meta i.far,
+#body-wrap #post-info #post-meta i.fab,
+#body-wrap #post-info #post-meta i.fa-solid,
+#body-wrap #post-info #post-meta i.fa-regular,
+#body-wrap #post-info #post-meta i.fa-brands,
+#body-wrap #recent-posts .article-meta-wrap i.fa,
+#body-wrap #recent-posts .article-meta-wrap i.fas,
+#body-wrap #recent-posts .article-meta-wrap i.far,
+#body-wrap #recent-posts .article-meta-wrap i.fab,
+#body-wrap #recent-posts .article-meta-wrap i.fa-solid,
+#body-wrap #recent-posts .article-meta-wrap i.fa-regular,
+#body-wrap #recent-posts .article-meta-wrap i.fa-brands,
+#body-wrap #nav i.fa,
+#body-wrap #nav i.fas,
+#body-wrap #nav i.far,
+#body-wrap #nav i.fab,
+#body-wrap #sidebar-menus i.fa,
+#body-wrap #sidebar-menus i.fas,
+#body-wrap #sidebar-menus i.far,
+#body-wrap #sidebar-menus i.fab,
+#body-wrap #aside-content i.fa,
+#body-wrap #aside-content i.fas,
+#body-wrap #aside-content i.far,
+#body-wrap #aside-content i.fab {
+  font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free', 'Font Awesome 5 Free' !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  line-height: 1 !important;
+  text-rendering: auto !important;
+}
+
+#body-wrap i.fas,
+#body-wrap i.fa-solid,
+#body-wrap #post-info #post-meta i.fas,
+#body-wrap #recent-posts .article-meta-wrap i.fas {
+  font-weight: 900 !important;
+}
+
+#body-wrap i.far,
+#body-wrap i.fa-regular,
+#body-wrap #post-info #post-meta i.far,
+#body-wrap #recent-posts .article-meta-wrap i.far {
+  font-weight: 400 !important;
+}
+
+#body-wrap i.fab,
+#body-wrap i.fa-brands {
+  font-family: 'Font Awesome 7 Brands', 'Font Awesome 6 Brands', 'Font Awesome 5 Brands' !important;
+  font-weight: 400 !important;
 }
