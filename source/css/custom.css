@@ -324,3 +324,66 @@ body {
   font-family: 'Font Awesome 7 Brands', 'Font Awesome 6 Brands', 'Font Awesome 5 Brands' !important;
   font-weight: 400 !important;
 }
+
+#body-wrap #post .post-copyright i.fa,
+#body-wrap #post .post-copyright i.fas,
+#body-wrap #post .post-copyright i.far,
+#body-wrap #post .post-copyright i.fab,
+#body-wrap #post .post-copyright i.fa-solid,
+#body-wrap #post .post-copyright i.fa-regular,
+#body-wrap #post .post-copyright i.fa-brands,
+#body-wrap #post .tag_share i.fa,
+#body-wrap #post .tag_share i.fas,
+#body-wrap #post .tag_share i.far,
+#body-wrap #post .tag_share i.fab,
+#body-wrap #rightside i.fa,
+#body-wrap #rightside i.fas,
+#body-wrap #rightside i.far,
+#body-wrap #rightside i.fab {
+  font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free', 'Font Awesome 5 Free' !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  line-height: 1 !important;
+  text-rendering: auto !important;
+}
+
+#body-wrap #post .post-copyright i.fas,
+#body-wrap #post .post-copyright i.fa-solid,
+#body-wrap #post .tag_share i.fas,
+#body-wrap #rightside i.fas,
+#body-wrap #rightside i.fa-solid {
+  font-weight: 900 !important;
+}
+
+#body-wrap #post .post-copyright i.far,
+#body-wrap #post .post-copyright i.fa-regular,
+#body-wrap #post .tag_share i.far,
+#body-wrap #rightside i.far,
+#body-wrap #rightside i.fa-regular {
+  font-weight: 400 !important;
+}
+
+#body-wrap #post .post-copyright i.fab,
+#body-wrap #post .post-copyright i.fa-brands,
+#body-wrap #post .tag_share i.fab,
+#body-wrap #rightside i.fab,
+#body-wrap #rightside i.fa-brands {
+  font-family: 'Font Awesome 7 Brands', 'Font Awesome 6 Brands', 'Font Awesome 5 Brands' !important;
+  font-weight: 400 !important;
+}
+
+#body-wrap #post .tag_share .social-share,
+#body-wrap #post .tag_share .social-share *,
+#body-wrap #post .tag_share .social-share .social-share-icon,
+#body-wrap #post .tag_share .social-share .social-share-icon::before {
+  font-family: 'iconfont' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+}
+
+#body-wrap #post .tag_share .social-share .social-share-icon {
+  line-height: 32px !important;
+}
