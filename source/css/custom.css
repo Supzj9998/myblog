@@ -275,29 +275,24 @@ body {
 #body-wrap #post-info #post-meta i.fa,
 #body-wrap #post-info #post-meta i.fas,
 #body-wrap #post-info #post-meta i.far,
-#body-wrap #post-info #post-meta i.fab,
 #body-wrap #post-info #post-meta i.fa-solid,
 #body-wrap #post-info #post-meta i.fa-regular,
 #body-wrap #post-info #post-meta i.fa-brands,
 #body-wrap #recent-posts .article-meta-wrap i.fa,
 #body-wrap #recent-posts .article-meta-wrap i.fas,
 #body-wrap #recent-posts .article-meta-wrap i.far,
-#body-wrap #recent-posts .article-meta-wrap i.fab,
 #body-wrap #recent-posts .article-meta-wrap i.fa-solid,
 #body-wrap #recent-posts .article-meta-wrap i.fa-regular,
 #body-wrap #recent-posts .article-meta-wrap i.fa-brands,
 #body-wrap #nav i.fa,
 #body-wrap #nav i.fas,
 #body-wrap #nav i.far,
-#body-wrap #nav i.fab,
 #body-wrap #sidebar-menus i.fa,
 #body-wrap #sidebar-menus i.fas,
 #body-wrap #sidebar-menus i.far,
-#body-wrap #sidebar-menus i.fab,
 #body-wrap #aside-content i.fa,
 #body-wrap #aside-content i.fas,
-#body-wrap #aside-content i.far,
-#body-wrap #aside-content i.fab {
+#body-wrap #aside-content i.far {
   font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free', 'Font Awesome 5 Free' !important;
   font-style: normal !important;
   font-variant: normal !important;
@@ -328,18 +323,15 @@ body {
 #body-wrap #post .post-copyright i.fa,
 #body-wrap #post .post-copyright i.fas,
 #body-wrap #post .post-copyright i.far,
-#body-wrap #post .post-copyright i.fab,
 #body-wrap #post .post-copyright i.fa-solid,
 #body-wrap #post .post-copyright i.fa-regular,
 #body-wrap #post .post-copyright i.fa-brands,
 #body-wrap #post .tag_share i.fa,
 #body-wrap #post .tag_share i.fas,
 #body-wrap #post .tag_share i.far,
-#body-wrap #post .tag_share i.fab,
 #body-wrap #rightside i.fa,
 #body-wrap #rightside i.fas,
-#body-wrap #rightside i.far,
-#body-wrap #rightside i.fab {
+#body-wrap #rightside i.far {
   font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free', 'Font Awesome 5 Free' !important;
   font-style: normal !important;
   font-variant: normal !important;
@@ -363,9 +355,9 @@ body {
   font-weight: 400 !important;
 }
 
-#body-wrap #post .post-copyright i.fab,
 #body-wrap #post .post-copyright i.fa-brands,
-#body-wrap #post .tag_share i.fab,
+#body-wrap #aside-content i.fab,
+#body-wrap #aside-content i.fa-brands,
 #body-wrap #rightside i.fab,
 #body-wrap #rightside i.fa-brands {
   font-family: 'Font Awesome 7 Brands', 'Font Awesome 6 Brands', 'Font Awesome 5 Brands' !important;
@@ -572,5 +564,177 @@ body.read-mode .post-content a {
 
 body.read-mode .exit-readmode {
   border: 1px solid rgba(90, 70, 35, 0.35) !important;
+}
+
+#article-container figure.highlight,
+#article-container figure.highlight table,
+#article-container figure.highlight pre,
+#article-container figure.highlight .code,
+#article-container figure.highlight .code pre,
+.post-content figure.highlight,
+.post-content figure.highlight table,
+.post-content figure.highlight pre,
+.post-content figure.highlight .code,
+.post-content figure.highlight .code pre {
+  background: #1f2335 !important;
+  color: #c0caf5 !important;
+}
+
+#article-container figure.highlight .gutter pre,
+.post-content figure.highlight .gutter pre {
+  background: #1a1b26 !important;
+  color: #565f89 !important;
+}
+
+#article-container .highlight-tools,
+.post-content .highlight-tools {
+  background: #1a1b26 !important;
+  color: #7aa2f7 !important;
+}
+
+#article-container figure.highlight .line,
+#article-container figure.highlight .line span,
+.post-content figure.highlight .line,
+.post-content figure.highlight .line span {
+  color: #c0caf5 !important;
+}
+
+#article-container figure.highlight .comment,
+#article-container figure.highlight .quote,
+.post-content figure.highlight .comment,
+.post-content figure.highlight .quote {
+  color: #565f89 !important;
+  font-style: italic !important;
+}
+
+#article-container figure.highlight .keyword,
+#article-container figure.highlight .selector-tag,
+#article-container figure.highlight .subst,
+.post-content figure.highlight .keyword,
+.post-content figure.highlight .selector-tag,
+.post-content figure.highlight .subst {
+  color: #bb9af7 !important;
+}
+
+#article-container figure.highlight .built_in,
+#article-container figure.highlight .type,
+#article-container figure.highlight .class .title,
+.post-content figure.highlight .built_in,
+.post-content figure.highlight .type,
+.post-content figure.highlight .class .title {
+  color: #7dcfff !important;
+}
+
+#article-container figure.highlight .string,
+#article-container figure.highlight .regexp,
+#article-container figure.highlight .symbol,
+#article-container figure.highlight .bullet,
+.post-content figure.highlight .string,
+.post-content figure.highlight .regexp,
+.post-content figure.highlight .symbol,
+.post-content figure.highlight .bullet {
+  color: #9ece6a !important;
+}
+
+#article-container figure.highlight .number,
+#article-container figure.highlight .literal,
+#article-container figure.highlight .variable,
+#article-container figure.highlight .template-variable,
+.post-content figure.highlight .number,
+.post-content figure.highlight .literal,
+.post-content figure.highlight .variable,
+.post-content figure.highlight .template-variable {
+  color: #ff9e64 !important;
+}
+
+#article-container figure.highlight .title,
+#article-container figure.highlight .function,
+#article-container figure.highlight .params,
+.post-content figure.highlight .title,
+.post-content figure.highlight .function,
+.post-content figure.highlight .params {
+  color: #7aa2f7 !important;
+}
+
+#article-container figure.highlight .attr,
+#article-container figure.highlight .attribute,
+#article-container figure.highlight .name,
+#article-container figure.highlight .tag,
+.post-content figure.highlight .attr,
+.post-content figure.highlight .attribute,
+.post-content figure.highlight .name,
+.post-content figure.highlight .tag {
+  color: #f7768e !important;
+}
+
+#article-container figure.highlight .meta,
+#article-container figure.highlight .operator,
+#article-container figure.highlight .punctuation,
+.post-content figure.highlight .meta,
+.post-content figure.highlight .operator,
+.post-content figure.highlight .punctuation {
+  color: #89ddff !important;
+}
+
+#article-container .highlight-tools .code-lang,
+.post-content .highlight-tools .code-lang {
+  text-transform: none !important;
+}
+
+#article-container figure.highlight .line .comment,
+#article-container figure.highlight .line .quote,
+.post-content figure.highlight .line .comment,
+.post-content figure.highlight .line .quote {
+  color: #565f89 !important;
+  font-style: italic !important;
+}
+
+#article-container figure.highlight .line .keyword,
+#article-container figure.highlight .line .selector-tag,
+#article-container figure.highlight .line .subst,
+.post-content figure.highlight .line .keyword,
+.post-content figure.highlight .line .selector-tag,
+.post-content figure.highlight .line .subst {
+  color: #bb9af7 !important;
+}
+
+#article-container figure.highlight .line .built_in,
+#article-container figure.highlight .line .type,
+#article-container figure.highlight .line .class .title,
+.post-content figure.highlight .line .built_in,
+.post-content figure.highlight .line .type,
+.post-content figure.highlight .line .class .title {
+  color: #7dcfff !important;
+}
+
+#article-container figure.highlight .line .string,
+#article-container figure.highlight .line .regexp,
+#article-container figure.highlight .line .symbol,
+#article-container figure.highlight .line .bullet,
+.post-content figure.highlight .line .string,
+.post-content figure.highlight .line .regexp,
+.post-content figure.highlight .line .symbol,
+.post-content figure.highlight .line .bullet {
+  color: #9ece6a !important;
+}
+
+#article-container figure.highlight .line .number,
+#article-container figure.highlight .line .literal,
+#article-container figure.highlight .line .variable,
+#article-container figure.highlight .line .template-variable,
+.post-content figure.highlight .line .number,
+.post-content figure.highlight .line .literal,
+.post-content figure.highlight .line .variable,
+.post-content figure.highlight .line .template-variable {
+  color: #ff9e64 !important;
+}
+
+#article-container figure.highlight .line .title,
+#article-container figure.highlight .line .function,
+#article-container figure.highlight .line .params,
+.post-content figure.highlight .line .title,
+.post-content figure.highlight .line .function,
+.post-content figure.highlight .line .params {
+  color: #7aa2f7 !important;
 }
 
