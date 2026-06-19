@@ -12,18 +12,20 @@ const target = path.join(
 );
 
 const patchedBlock = `  if globalPageType === 'post'
-    - const currentCategory = page.categories && page.categories.data && page.categories.data.length ? page.categories.data[0].path : null
+    - const getCategoryPath = function(category) { return category && (category.path || category.slug || category.name) }
+    - const currentCategories = page.categories && page.categories.data ? page.categories.data.map(getCategoryPath).filter(Boolean) : []
     - const categoryTimeline = []
-    - if (currentCategory) {
+    - if (currentCategories.length) {
     -   site.posts.sort('date', -1).each(function(article) {
-    -     if (article.categories && article.categories.data && article.categories.data.some(function(item) { return item.path === currentCategory })) {
+    -     const articleCategories = article.categories && article.categories.data ? article.categories.data.map(getCategoryPath).filter(Boolean) : []
+    -     if (articleCategories.some(function(item) { return currentCategories.includes(item) })) {
     -       categoryTimeline.push(article)
     -     }
     -   })
     - }
-    - let categoryPrev = page.next
-    - let categoryNext = page.prev
-    - if (currentCategory) {
+    - let categoryPrev = null
+    - let categoryNext = null
+    - if (currentCategories.length) {
     -   const currentIndex = categoryTimeline.findIndex(function(article) { return article.path === page.path })
     -   if (currentIndex > -1) {
     -     categoryPrev = categoryTimeline[currentIndex - 1] || null
@@ -34,10 +36,7 @@ const patchedBlock = `  if globalPageType === 'post'
 
     nav#pagination.pagination-post`;
 
-const originalBlock = `  if globalPageType === 'post'
-    - let paginationOrder = theme.post_pagination === 2 ? { prev: page.prev, next: page.next } : { prev: page.next, next: page.prev }
-
-    nav#pagination.pagination-post`;
+const postPaginationPattern = /  if globalPageType === 'post'\n[\s\S]*?\n    nav#pagination\.pagination-post/;
 
 if (!fs.existsSync(target)) {
   console.warn(`Butterfly pagination template not found, skip patch: ${target}`);
@@ -50,9 +49,9 @@ if (current.includes(patchedBlock)) {
   process.exit(0);
 }
 
-if (!current.includes(originalBlock)) {
-  console.warn('Butterfly pagination template shape changed; skip pagination patch.');
+if (!postPaginationPattern.test(current)) {
+  console.warn('Butterfly pagination template post block not found; skip pagination patch.');
   process.exit(0);
 }
 
-fs.writeFileSync(target, current.replace(originalBlock, patchedBlock));
+fs.writeFileSync(target, current.replace(postPaginationPattern, patchedBlock));
