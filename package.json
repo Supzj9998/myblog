@@ -9,7 +9,8 @@
     "server": "hexo server",
     "prebuild": "node tools/patch-butterfly-pagination.js",
     "predeploy": "node tools/patch-butterfly-pagination.js",
-    "preserver": "node tools/patch-butterfly-pagination.js"
+    "preserver": "node tools/patch-butterfly-pagination.js",
+    "postinstall": "node tools/patch-butterfly-pagination.js"
   },
   "hexo": {
     "version": "8.1.2"
