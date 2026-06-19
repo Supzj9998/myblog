@@ -5,12 +5,13 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "npm run build && wrangler deploy",
     "server": "hexo server",
     "prebuild": "node tools/patch-butterfly-pagination.js",
     "predeploy": "node tools/patch-butterfly-pagination.js",
     "preserver": "node tools/patch-butterfly-pagination.js",
-    "postinstall": "node tools/patch-butterfly-pagination.js"
+    "postinstall": "node tools/patch-butterfly-pagination.js",
+    "preview": "npm run build && wrangler dev"
   },
   "hexo": {
     "version": "8.1.2"
@@ -31,5 +32,8 @@
     "hexo-theme-fluid": "^1.9.9",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.27.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.102.0"
   }
 }
