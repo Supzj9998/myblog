@@ -40,7 +40,8 @@ const originalBlock = `  if globalPageType === 'post'
     nav#pagination.pagination-post`;
 
 if (!fs.existsSync(target)) {
-  throw new Error(`Butterfly pagination template not found: ${target}`);
+  console.warn(`Butterfly pagination template not found, skip patch: ${target}`);
+  process.exit(0);
 }
 
 const current = fs.readFileSync(target, 'utf8');
@@ -50,7 +51,8 @@ if (current.includes(patchedBlock)) {
 }
 
 if (!current.includes(originalBlock)) {
-  throw new Error('Butterfly pagination template shape changed; patch was not applied.');
+  console.warn('Butterfly pagination template shape changed; skip pagination patch.');
+  process.exit(0);
 }
 
 fs.writeFileSync(target, current.replace(originalBlock, patchedBlock));
