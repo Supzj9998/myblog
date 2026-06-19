@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2026-06-18 23:49:04
-categories: python
+categories: 博客搭建
 ---
 欢迎使用 [Hexo](https://hexo.io/)！这是你的第一篇文章。想了解更多信息，请查看[documentation](https://hexo.io/docs/)。如果你在使用 Hexo 时遇到任何问题，可以在[troubleshooting](https://hexo.io/docs/troubleshooting.html)中寻找答案，也可以在 [GitHub](https://github.com/hexojs/hexo/issues) 上向我提问。
 
