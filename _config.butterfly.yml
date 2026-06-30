@@ -239,7 +239,7 @@ related_post:
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
 
 # Displays outdated notice for a post
 noticeOutdate:
@@ -1062,7 +1062,7 @@ inject:
     - <link rel="stylesheet" href="/lib/sharejs/css/share.min.css">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
-    # - <script src="xxxx"></script>
+    - <script src="/js/custom-toc.js"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
