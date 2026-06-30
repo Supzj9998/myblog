@@ -2247,6 +2247,24 @@ d3 = dict([("name", "Alice"), ("age", 18)])
 d4 = dict({"name": "Alice", "age": 18})
 ```
 
+**字典推导式**
+
+字典推导式和列表推导式类似
+```python
+squares = {x: x ** 2 for x in range(5)}
+
+print(squares)
+```
+输出：
+```
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+结构是：
+```python
+{key表达式: value表达式 for 变量 in 可迭代对象}
+```
+
+
 ### 10.2. 字典的引索
 
 **d[key]**
@@ -2689,24 +2707,7 @@ print(d)
 {'name': 'Alice', 'age': 18, 'score': 95}
 ```
 
-### 10.6. 字典推导式
-
-字典推导式和列表推导式类似
-```python
-squares = {x: x ** 2 for x in range(5)}
-
-print(squares)
-```
-输出：
-```
-{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
-```
-结构是：
-```python
-{key表达式: value表达式 for 变量 in 可迭代对象}
-```
-
-### 10.7. 字典合并
+### 10.6. 字典合并
 
 Python3.9开始支持字典合并运算符：|和|=
 
@@ -2755,7 +2756,7 @@ print(a)
 {'x': 1, 'y': 20, 'z': 3}
 ```
 
-### 10.8. 遍历字典
+### 10.7. 遍历字典
 
 **默认遍历key**
 
@@ -2798,7 +2799,7 @@ for key, value in student.items():
 ```
 这里本质上是对每个二元组做解包
 
-### 10.9. 字典的顺序问题
+### 10.8. 字典的顺序问题
 
 现代Python中，字典会保持插入顺序
 
@@ -2806,7 +2807,7 @@ for key, value in student.items():
 
 但如果删除后重新插入，它会跑到最后
 
-### 10.10. 字典视图对象
+### 10.9. 字典视图对象
 
 前面有说过返回字典视图对象的字典方法，这里详细说一下**字典视图对象**
 
@@ -2832,4 +2833,659 @@ dict_items([('a', 1), ('b', 2)])
 
 字典视图对象是动态的，可以随着字典变化实时更新
 
+## 11. 集合set
 
+Python中的集合类型主要有两种
+```python
+set # 可变集合
+frozenset # 不可变集合
+```
+平时我们所说的集合，一般指的是set
+
+集合有几个核心特点：元素不重复、无序、可以做集合运算、集合是可变对象、集合中的元素必须是可哈希对象 
+
+### 11.1. 创建集合
+
+**使用大括号创建集合**
+
+```python
+s = {1, 2, 3}
+```
+这是最常见的写法
+
+**使用set()函数创建集合**
+
+函数签名：
+```python
+set(iterable=(), /) -> set
+```
+例子：
+```python
+s = set([1, 2, 2, 3])
+print(s)
+```
+输出：
+```
+```
+
+**创建空集合**
+
+注意，空集合不能写成：
+```python
+s = {}
+```
+这创建的是空字典，不是集合
+
+如果要创建空集合，正确的写法是
+```python
+s = set()
+```
+
+**使用集合推导式创建集合**
+
+集合也支持推导式，写法依旧类似列表推导式
+```python
+s = {x for x in range(5)}
+
+print(s)
+```
+输出：
+```
+{0, 1, 2, 3, 4}
+```
+
+集合在创建时如果输入重复的元素，则会自动去重
+
+### 11.2. 添加元素
+
+#### 11.2.1 add()
+
+作用是向集合中添加一个元素
+
+函数签名：
+```python
+set.add(element, /) -> None
+```
+例子：
+```python
+s = {1, 2, 3}
+
+s.add(4)
+
+print(s)
+```
+输出：
+```
+{1, 2, 3, 4}
+```
+
+注意，add()是添加一个整体元素：
+```python
+s = {1, 2}
+
+s.add((3, 4))
+
+print(s)
+```
+输出：
+```
+{1, 2, (3, 4)}
+```
+
+#### 11.2.2. update()
+
+作用是把其他可迭代对象中的元素逐个加入集合
+
+函数签名：
+```python
+set.update(*others) -> None
+```
+例子：
+```python
+s = {1, 2}
+
+s.update([3, 4, 5])
+```
+输出：
+```
+{1, 2, 3, 4, 5}
+```
+
+### 11.3. 删除元素
+
+#### 11.3.1. remove()
+
+删除指定元素
+
+函数签名：
+```python
+set.remove(element, /) -> None
+```
+例子：
+```python
+s = {1, 2, 3}
+
+s.remove(2)
+
+print()
+```
+输出：
+```
+{1, 3}
+```
+如果指定的元素不存在，则会报错
+
+#### 11.3.2. discard()
+
+也是删除指定元素，但与remove()不同的是：当指定的元素不存在时不会报错
+
+函数签名：
+```python
+set.discard(element, /) -> None
+```
+例子：
+```python
+s = {1, 2, 3}
+
+s.discard(2)
+
+print(2)
+```
+输出：
+```
+{1, 3}
+```
+
+#### 11.3.3. pop()
+
+随机删除并返回集合中的一个元素
+```python
+s = {1, 2, 3}
+
+x = s.pop()
+
+print(x)
+print(s)
+```
+可能输出：
+```
+1
+{2, 3}
+```
+
+#### 11.3.4. clear()
+
+清空集合
+
+函数签名：
+```python
+set.clear() -> None
+```
+例子：
+```python
+s = {1, 2, 3}
+
+s.clear()
+
+print(s)
+```
+输出：
+```
+set()
+```
+这里空集合显示的是set()，不是{}，因为{}表示空字典
+
+### 11.4. 集合的常用操作
+
+#### 11.4.1. 判断元素是否存在
+
+**使用in**
+
+例子：
+```python
+s = {1, 2, 3}
+
+print(2 in s)
+print(5 in s)
+print(5 not in s)
+```
+输出：
+```
+True
+False
+True
+```
+
+#### 11.4.2. 获取集合长度
+
+**len()**
+
+```python
+s = {1, 2, 3}
+
+print(len(s))
+```
+输出：
+```
+3
+```
+
+#### 11.4.3. 遍历集合
+
+```python
+s = {"apple", "banana", "orange"}
+
+for item in s:
+    print(item)
+```
+注意，不能写依赖集合遍历顺序的代码，因为集合是无序的。
+
+### 11.5. 集合运算
+
+集合最重要的地方，就是可以做数学集合运算
+
+#### 11.5.1. 并集
+
+两个集合中所有元素合起来
+
+数学上类似：
+```
+A ∪ B
+```
+Python中可以这样写：
+```python
+a | b
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)
+```
+输出：
+```python
+{1, 2, 3, 4, 5}
+```
+
+**也可以用union()**
+
+函数签名：
+```python
+set.union(*other) -> set
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+result = a.union(b)
+print(result)
+```
+输出：
+```
+{1, 2, 3, 4, 5}
+```
+
+union()不会修改原集合，而是返回一个新集合
+
+#### 11.5.2. 交集
+
+两个集合共有的元素
+
+数学上类似：
+```
+A ∩ B
+```
+Python中可以这样写：
+```python
+a & b
+```
+例如：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a & b)
+```
+输出：
+```
+{3}
+```
+
+**也可以用intersection()**
+
+函数签名：
+```python
+set.intersection(*others) -> set
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+result = a.intersection(b)
+print(result)
+```
+输出：
+```
+{3}
+```
+
+#### 11.5.3. 差集
+
+属于a，但不属于b的元素
+
+数学上类似：
+```
+A - B
+```
+Python中可以这样写：
+```python
+a - b
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a - b)
+```
+输出：
+```
+{1, 2}
+```
+
+**也可以使用difference()**
+
+函数签名：
+```python
+set.difference(*others) -> set
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+result = a.difference(b)
+print(result)
+```
+输出：
+```
+{1, 2}
+```
+
+#### 11.5.4. 对称差集
+
+只属于其中一个集合，但不同时属于两个集合的元素
+
+Python中可以这样写：
+```python
+a ^ b
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a ^ b)
+```
+输出：
+```
+{1, 2, 4, 5}
+```
+
+#### 11.5.5. 原地并集
+
+**update可用于原地并集合**
+
+函数签名：
+```python
+set.update(*others) -> None
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+a.update(b)
+
+print(a)
+```
+输出：
+```python
+{1, 2, 3, 4, 5}
+```
+也可以写成：
+```python
+a |= b
+```
+
+#### 11.5.6. 原地并集
+
+**intersection_update相当于原地交集**
+
+```python
+set.intersection_update(*others) -> None
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+a.intersection_update(b)
+
+print(a)
+```
+输出：
+```
+{3}
+```
+也可以写成：
+```python
+a &= b
+```
+
+#### 11.5.7. 原地差集
+
+**difference_update相当于原地交集**
+
+```python
+set.difference_update(*others) -> None
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+a.difference_update(b)
+
+print(a)
+```
+输出：
+```
+{1, 2}
+```
+也可以写成：
+```python
+a -= b
+```
+
+#### 11.5.8. 原地对称差集
+
+**symmetric_difference_update相当于原地对称差集**
+
+```python
+set.symmetric_difference_update(other, /) -> None
+```
+例子：
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+a.symmetric_difference_update(b)
+
+print(a)
+```
+输出：
+```python
+{1, 2, 3, 4}
+```
+也可以写成：
+```python
+a ^= b
+```
+
+### 11.6. 集合之间的关系判断
+
+#### 11.6.1. 判断是否是子集
+
+**issubset()**
+
+函数签名：
+```python
+set.issubset(other, /) -> bool
+```
+例子：
+```python
+a = {1, 2}
+b = {1, 2, 3, 4}
+
+print(a.issubset(b))
+```
+输出：
+```python
+True
+```
+也可以用：
+```python
+a <= b
+```
+
+#### 11.6.2. 判断是否是真子集
+
+**用<**
+
+```python
+a < b
+```
+例子：
+```python
+a = {1, 2}
+b = {1, 2, 3}
+
+print(a < b)
+```
+输出：
+```
+True
+```
+
+#### 11.6.3. 判断是否为超集
+
+**issuperset()**
+
+函数签名：
+```python
+set.issuperset(other, /) -> bool
+```
+例子：
+```python
+a = {1, 2}
+b = {1, 2, 3, 4}
+
+print(b.issuperset(a))
+```
+输出：
+```
+True
+```
+也可以用：
+```python
+b >= a
+```
+
+#### 11.6.4. 判断是否为真超集
+
+**用>**
+
+```python
+b > a
+```
+例子：
+```python
+a = {1, 2}
+b = {1, 2, 3}
+
+print(b > a)
+```
+输出：
+```
+True
+```
+
+#### 11.6.5. 判断是否没有交集
+
+**isdisjoint(other, /) -> bool**
+
+例如：
+```python
+a = {1, 2, 3}
+b = {4, 5, 6}
+
+print(a.isdisjoint(b))
+```
+输出：
+```
+True
+```
+
+### 11.7. 复制集合
+
+**copy()**
+
+```python
+set.copy() -> set
+```
+例子：
+```python
+a = {1, 2, 3}
+
+b = a.copy()
+
+print(b)
+```
+输出：
+```
+{1, 2, 3}
+```
+
+### 11.8. 不可变集合frozenset
+
+set 是可变的
+
+frozenset 是不可变的
+
+创建方式：
+```python
+fs = frozenset([1, 2, 3])
+```
+
+函数签名：
+```python
+frozenset(iterable=(), /)
+```
+
+例子：
+```python
+fs = frozenset([1, 2, 2, 3])
+
+print(fs)
+```
+输出：
+```
+frozenset({1, 2, 3})
+```
+frozenset不能添加，删除元素，因为它是不可变类型
+
+因为frozenset是不可变的，所以它可以作为集合中的元素，也可以作为字典中的key
